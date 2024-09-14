@@ -11,13 +11,14 @@ from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationalRetrievalChain
 import toml
 
+
 # Load environment variables (for API keys)
 load_dotenv()
 
 # Load OpenAI API key from environment
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+OPENAI_API_KEY = st.secrets["general"]["OPENAI_API_KEY"]
 if not OPENAI_API_KEY:
-    raise ValueError("OPENAI_API_KEY environment variable is not set")
+    raise ValueError("OPENAI_API_KEY is not set in Streamlit secrets")
 
 # Streamlit App
 st.title("RAG Document Q&A")
