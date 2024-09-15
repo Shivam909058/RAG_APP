@@ -21,7 +21,7 @@ if not OPENAI_API_KEY:
     raise ValueError("OPENAI_API_KEY is not set in Streamlit secrets")
 
 # Streamlit App
-st.title("RAG Document Q&A")
+st.title("YOOM Document Q&A")
 st.write("Please upload text documents and ask questions based on the content")
 
 # Initialize OpenAI LLM
